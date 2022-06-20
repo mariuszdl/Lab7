@@ -1,6 +1,7 @@
 package pl.lublin.wsei.java.cwiczenia.lab7;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -9,10 +10,10 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("sample.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        stage.setTitle("Zdarzenia");
+        stage.setScene(new Scene(root, 800, 600));
+        stage.setResizable(false);
         stage.show();
     }
 
